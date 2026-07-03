@@ -1,0 +1,255 @@
+1. Introduction to Java
+History of Java
+Features of Java
+Java Editions (SE, EE, ME)
+JVM
+JRE
+JDK
+Bytecode
+Java Program Structure
+Compilation Process
+
+
+2. Variables & Data Types
+Variables
+Primitive Data Types
+Non-Primitive Data Types
+Type Casting
+Constants (final)
+Literals
+
+
+3. Operators
+Arithmetic
+Assignment
+Relational
+Logical
+Bitwise
+Unary
+Ternary
+Shift Operators
+
+
+4. Input & Output
+Scanner Class
+BufferedReader
+Command Line Arguments
+Printing (System.out.print(), println(), printf())
+
+
+5. Control Statements
+Decision Making
+if
+if-else
+else-if
+Nested if
+switch
+
+Looping
+for
+while
+do-while
+Enhanced for (for-each)
+
+Jump Statements
+break
+continue
+return
+
+
+6. Arrays
+One-Dimensional Array
+Two-Dimensional Array
+Multi-Dimensional Array
+Jagged Array
+Array Operations
+
+
+7. Strings
+String
+StringBuffer
+StringBuilder
+String Methods
+String Comparison
+
+
+8. Methods
+Method Declaration
+Parameters
+Return Type
+Method Overloading
+Variable Arguments (Varargs)
+Recursion
+
+
+9. Object-Oriented Programming (OOP)
+Class
+Object
+Constructor
+Default Constructor
+Parameterized Constructor
+Copy Constructor (Concept)
+this Keyword
+static Keyword
+final Keyword
+
+Inheritance
+Single
+Multilevel
+Hierarchical
+Hybrid (using interfaces)
+
+Polymorphism
+Compile-time
+Run-time
+Method Overloading
+Method Overriding
+
+Abstraction
+Interface
+Encapsulation
+super Keyword
+Object Class
+
+
+10. Packages
+User-defined Packages
+Built-in Packages
+Import Statement
+
+
+11. Exception Handling
+try
+catch
+finally
+throw
+throws
+Custom Exception
+
+
+12. Collections Framework
+List
+ArrayList
+LinkedList
+Vector
+Stack
+Set
+HashSet
+LinkedHashSet
+TreeSet
+Queue
+PriorityQueue
+Deque
+ArrayDeque
+Map
+HashMap
+LinkedHashMap
+TreeMap
+Hashtable
+Iterator
+ListIterator
+Comparable
+Comparator
+
+
+13. Wrapper Classes
+Integer
+Double
+Float
+Character
+Boolean
+Autoboxing
+Unboxing
+
+
+14. Multithreading
+Thread Class
+Runnable Interface
+Thread Lifecycle
+Synchronization
+Sleep
+Join
+Priority
+
+
+15. File Handling
+File Class
+FileReader
+FileWriter
+BufferedReader
+BufferedWriter
+Serialization
+
+
+16. Java 8 Features
+Lambda Expressions
+Functional Interfaces
+Streams API
+Method References
+Optional Class
+Default Methods
+
+
+17. Generics
+Generic Class
+Generic Methods
+Wildcards
+
+
+18. JDBC
+Database Connectivity
+DriverManager
+Connection
+Statement
+PreparedStatement
+ResultSet
+
+
+19. Networking
+Socket Programming
+ServerSocket
+URL
+HttpURLConnection
+
+
+20. Swing (GUI)
+JFrame
+JLabel
+JButton
+JTextField
+JCheckBox
+JTable
+Layout Managers
+
+
+21. JavaFX (Basics)
+22. Annotations
+@Override
+@Deprecated
+@SuppressWarnings
+23. Reflection API
+24. Enum
+25. Date & Time API
+LocalDate
+LocalTime
+LocalDateTime
+Period
+Duration
+26. Regular Expressions (Regex)
+27. Serialization & Deserialization
+28. Java Memory Management
+Heap
+Stack
+Garbage Collection
+29. Design Patterns (Basics)
+Singleton
+Factory
+Builder
+MVC
+30. Advanced Java
+Servlet
+JSP
+Maven
+Spring Boot (Introduction)
+REST API
+Hibernate (Introduction)

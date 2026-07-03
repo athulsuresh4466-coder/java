@@ -1,3 +1,3 @@
-ID: cd "c:\Users\Athul S\Desktop\java\file management system\" ; if ($?) { javac StudentFileManager.java } ; if ($?) { java StudentFileManager }
+ID: 100
 Name: athul s
-Marks: 20
+Marks: 222

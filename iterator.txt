@@ -1,0 +1,71 @@
+Methods of Iterator
+1. hasNext()
+Checks whether the next element is present or not.
+Returns true if another element exists.
+Returns false if no more elements are available.
+
+Syntax it.hasNext();
+
+
+2. next()
+Returns the current (next) element.
+Moves the iterator to the next position.
+
+Syntax it.next();
+
+
+3. remove()
+Removes the last element returned by next().
+Used to safely remove elements while iterating.
+
+Syntax  it.remove();
+
+
+Example
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Set<String> set = new HashSet<>();
+
+        set.add("Java");
+        set.add("Python");
+        set.add("C");
+
+        Iterator<String> it = set.iterator();
+
+        while(it.hasNext()) {
+            System.out.println(it.next());
+        }
+    }
+}
+Output
+Java
+Python
+C
+
+Note: The order may change because HashSet does not maintain insertion order.
+
+Advantages of Iterator
+Traverses elements one by one.
+Works with all Collection classes.
+Can safely remove elements during iteration using remove().
+Easy to use with loops.
+Limitations
+Can move only in the forward direction.
+Cannot access elements using an index.
+Does not support adding new elements while iterating.
+Interview/Exam Questions
+
+Q1. What is an Iterator?
+Answer: An Iterator is an interface used to traverse the elements of a Collection one by one.
+
+Q2. Which package contains the Iterator interface?
+Answer: java.util
+
+Q3. Name the three important methods of Iterator.
+
+hasNext()
+next()
+remove()

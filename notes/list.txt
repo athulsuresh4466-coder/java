@@ -16,7 +16,7 @@
 | `toArray()`                 | Converts list to array            | `Object[] arr = list.toArray();`         |
 | `sort(Comparator c)`        | Sorts the list                    | `list.sort(null);`                       |
 | `subList(int from, int to)` | Returns a portion of the list     | `list.subList(1, 3);`                    |
-|  removeall                  |  remove all commom elements from 2| 
+|  removeall                  |  remove all commom elements from 2     | 
 | `hasNext()`                 | Checks if there is a next element.     |
 | `next()`                    | Returns the next element.              |
 | `hasPrevious()`             | Checks if there is a previous element. |

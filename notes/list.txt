@@ -1,0 +1,18 @@
+| Method                      | Description                       | Example                                  |
+| --------------------------- | --------------------------------- | ---------------------------------------- |
+| `add(E e)`                  | Adds an element                   | `list.add("Apple");`                     |
+| `add(int index, E e)`       | Adds at a specific position       | `list.add(1, "Banana");`                 |
+| `get(int index)`            | Returns an element                | `list.get(0);`                           |
+| `set(int index, E e)`       | Replaces an element               | `list.set(0, "Orange");`                 |
+| `remove(int index)`         | Removes by index                  | `list.remove(1);`                        |
+| `remove(Object o)`          | Removes by value                  | `list.remove("Apple");`                  |
+| `size()`                    | Returns the number of elements    | `list.size();`                           |
+| `isEmpty()`                 | Checks if the list is empty       | `list.isEmpty();`                        |
+| `contains(Object o)`        | Checks if an element exists       | `list.contains("Apple");`                |
+| `clear()`                   | Removes all elements              | `list.clear();`                          |
+| `indexOf(Object o)`         | Returns first index of an element | `list.indexOf("Apple");`                 |
+| `lastIndexOf(Object o)`     | Returns last index                | `list.lastIndexOf("Apple");`             |
+| `iterator()`                | Returns an iterator               | `Iterator<String> it = list.iterator();` |
+| `toArray()`                 | Converts list to array            | `Object[] arr = list.toArray();`         |
+| `sort(Comparator c)`        | Sorts the list                    | `list.sort(null);`                       |
+| `subList(int from, int to)` | Returns a portion of the list     | `list.subList(1, 3);`                    |

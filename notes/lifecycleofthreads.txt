@@ -1,0 +1,264 @@
+
+
+
+life cycle of threds inn java
+
+Life Cycle of Threads in Java
+A thread in Java passes through 6 states during its lifetime. These states are defined in Thread.State. 
+
+1. NEW
+A thread object is created but start() has not been called.
+
+The thread is not executing.
+
+Thread t = new Thread();
+System.out.println(t.getState()); // NEW
+⬇️ start()
+
+2. RUNNABLE
+After calling start(), the thread enters the RUNNABLE state.
+
+It is ready to run and waits for the CPU scheduler.
+
+In Java, there is no separate "Running" state. A thread that is actually executing is still considered RUNNABLE. 
+
+t.start();
+⬇️ Scheduler gives CPU
+
+3. BLOCKED
+The thread is waiting to acquire a lock (synchronized block/method).
+
+Once the lock is available, it returns to RUNNABLE.
+
+synchronized(obj) {
+    // Another thread must wait here
+}
+⬇️ Lock released
+
+4. WAITING
+The thread waits indefinitely until another thread wakes it up.
+
+Methods that cause this state:
+
+wait()
+
+join()
+
+LockSupport.park()
+
+obj.wait();
+⬇️ notify() / notifyAll()
+
+5. TIMED_WAITING
+The thread waits for a specific amount of time.
+
+Methods:
+
+Thread.sleep(1000)
+
+wait(1000)
+
+join(1000)
+
+Thread.sleep(2000);
+⬇️ Time expires
+
+6. TERMINATED (Dead)
+The thread has completed its run() method or exited because of an exception.
+
+A terminated thread cannot be restarted.
+
+public void run() {
+    System.out.println("Thread finished");
+}
+Thread Life Cycle Diagram
+          NEW
+           |
+        start()
+           |
+           v
+      RUNNABLE
+      /   |   \
+     /    |    \
+BLOCKED WAITING TIMED_WAITING
+     \    |    /
+      \   |   /
+       RUNNABLE
+           |
+      run() completes
+           |
+           v
+      TERMINATED
+Interview Questions
+Q1. What are the states in Java Thread Life Cycle?
+
+NEW
+
+RUNNABLE
+
+BLOCKED
+
+WAITING
+
+TIMED_WAITING
+
+TERMINATED
+
+Q2. Which method starts a thread?
+
+start()
+
+Q3. Can we call start() twice on the same thread?
+
+❌ No. It throws IllegalThreadStateException.
+
+Q4. Which method puts a thread into TIMED_WAITING?
+
+Thread.sleep()
+
+Q5. Which method returns the current thread state?
+
+getState()
+
+Thread t = new Thread();
+System.out.println(t.getState()); // NEW
+This topic is frequently asked in Java interviews, so it's worth remembering the six states in order:
+
+NEW → RUNNABLE → BLOCKED / WAITING / TIMED_WAITING → RUNNABLE → TERMINATED. 
+
+
+i need more simple
+
+Java Thread Life Cycle (Very Simple)
+Think of a thread like a person doing a job.
+
+NEW → RUNNABLE → RUNNING → WAITING/BLOCKED → RUNNING → DEAD
+Note: In Java, RUNNING is included in the RUNNABLE state, but many colleges and interviews explain it separately because it's easier to understand.
+
+1. NEW 🆕
+Thread object is created.
+
+start() is not called.
+
+Thread t = new Thread();
+State: NEW
+
+2. RUNNABLE 🏃
+start() is called.
+
+Thread is ready to run.
+
+It is waiting for the CPU.
+
+t.start();
+State: RUNNABLE
+
+3. RUNNING ▶️
+CPU gives the thread a chance to execute.
+
+The run() method starts executing.
+
+public void run() {
+    System.out.println("Thread is running");
+}
+State: RUNNING (conceptually)
+
+4. WAITING / BLOCKED ⏸️
+The thread stops for some reason.
+
+WAITING
+Waiting for another thread.
+
+Example:
+
+wait();
+join();
+BLOCKED
+Waiting to get a lock.
+
+Example:
+
+synchronized(obj) {
+    // Another thread is using this lock
+}
+TIMED WAITING
+Waiting for a fixed time.
+
+Example:
+
+Thread.sleep(3000);
+After waiting, the thread goes back to RUNNABLE/RUNNING.
+
+5. DEAD (TERMINATED) ❌
+The run() method finishes.
+
+The thread ends permanently.
+
+public void run() {
+    System.out.println("Done");
+}
+State: DEAD
+
+You cannot restart a dead thread.
+
+Easy Diagram
+Create Thread
+      │
+      ▼
+   NEW
+      │ start()
+      ▼
+ RUNNABLE
+      │ CPU
+      ▼
+ RUNNING
+      │
+      ├── sleep() ───────► TIMED WAITING
+      ├── wait() ────────► WAITING
+      └── lock not free ─► BLOCKED
+             ▲
+             │
+      Back to RUNNABLE
+             │
+             ▼
+          RUNNING
+             │
+      run() completed
+             ▼
+      DEAD (TERMINATED)
+Simple Real-Life Example
+Imagine you're writing an exam:
+
+NEW → You enter the exam hall.
+
+RUNNABLE → You are waiting for the question paper.
+
+RUNNING → You are writing the exam.
+
+WAITING → You stop to ask for an extra sheet.
+
+BLOCKED → You wait because the invigilator is busy.
+
+TIMED WAITING → You take a 2-minute break (like sleep()).
+
+DEAD → You submit the paper and leave.
+
+2-Mark Answer (Exam)
+Life Cycle of a Thread in Java:
+
+NEW – Thread object is created.
+
+RUNNABLE – start() is called; waiting for CPU.
+
+RUNNING – Thread executes the run() method.
+
+WAITING/BLOCKED/TIMED WAITING – Thread is temporarily paused.
+
+TERMINATED (DEAD) – Thread finishes execution.
+
+Flow:
+NEW → RUNNABLE → RUNNING → WAITING/BLOCKED → RUNNING → TERMINATED
+
+This is the version most colleges expect in semester exams and is easy to remember.
+
+

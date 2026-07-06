@@ -1,0 +1,56 @@
+Multithreading in Java (Simple Theory)
+
+Definition:
+Multithreading is the process of executing multiple threads simultaneously within a single program. It helps perform more than one task at the same time, making programs faster and more responsive.
+
+What is a Thread?
+
+A thread is the smallest unit of execution in a program. A Java program always has at least one thread called the main thread.
+
+Why Use Multithreading?
+Performs multiple tasks at the same time.
+Improves CPU utilization.
+Makes applications more responsive.
+Reduces execution time for independent tasks.
+Ways to Create a Thread
+Extend the Thread class
+Implement the Runnable interface
+
+
+Thread Life Cycle
+New – Thread object is created.
+Runnable – start() is called, waiting for CPU.
+Running – Thread is executing the run() method.
+Blocked/Waiting – Thread is temporarily paused.
+Terminated (Dead) – Thread finishes execution.
+
+Important Methods
+
+Method	Description
+start()	Starts a new thread.
+run()	Contains the code executed by the thread.
+sleep(ms)	Pauses the thread for a specified time.
+join()	Waits for another thread to finish.
+isAlive()	Checks whether the thread is still running.
+
+
+Advantages
+Faster execution.
+Better performance.
+Efficient use of CPU.
+Improves user experience in applications.
+
+
+Disadvantages
+More complex to program.
+Threads may interfere with each other if they share data.
+Debugging can be difficult.
+
+
+Applications
+Online food delivery systems
+Banking systems
+Games
+Web servers
+Download managers
+Chat applications

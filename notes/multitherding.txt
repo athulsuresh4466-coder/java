@@ -7,6 +7,9 @@ What is a Thread?
 
 A thread is the smallest unit of execution in a program. A Java program always has at least one thread called the main thread.
 
+deamon thread 
+support 
+
 Why Use Multithreading?
 Performs multiple tasks at the same time.
 Improves CPU utilization.
@@ -18,6 +21,7 @@ Implement the Runnable interface
 
 
 Thread Life Cycle
+
 New – Thread object is created.
 Runnable – start() is called, waiting for CPU.
 Running – Thread is executing the run() method.
@@ -32,6 +36,11 @@ run()	Contains the code executed by the thread.
 sleep(ms)	Pauses the thread for a specified time.
 join()	Waits for another thread to finish.
 isAlive()	Checks whether the thread is still running.
+isyeald()  pause the execution
+suspet
+resume
+notify
+notify aii woke upp all231.<?2
 
 
 Advantages

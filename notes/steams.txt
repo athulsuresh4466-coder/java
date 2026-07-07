@@ -1,0 +1,169 @@
+What is Stream?
+
+A Stream is a sequence of elements used to process data from collections (like List, Set, etc.) in a functional style. It was introduced in Java 8. Streams don't store data themselves—they process data from an existing source.
+
+Syntax
+list.stream()
+
+
+Types of Stream Operations
+
+1. Intermediate Operations
+Return a new Stream
+Lazy (they execute only when a terminal operation is called)
+
+
+Method	Purpose
+filter()	Select elements
+map()	Transform elements
+sorted()	Sort elements
+distinct()	Remove duplicates
+limit(n)	First n elements
+skip(n)	Skip first n elements
+peek()	View elements (debugging)
+Example
+List<Integer> list = Arrays.asList(5,2,8,1,3);
+
+list.stream()
+    .filter(n -> n > 2)
+    .sorted()
+    .forEach(System.out::println);
+
+Output
+
+3
+5
+8
+
+
+2. Terminal Operations
+Produce the final result.
+After a terminal operation, the stream cannot be reused.
+
+
+Method	Purpose
+forEach()	Print/process elements
+collect()	Convert stream to List/Set
+count()	Count elements
+reduce()	Sum/product/etc.
+findFirst()	First element
+findAny()	Any element
+anyMatch()	Check any element
+allMatch()	Check all elements
+noneMatch()	Check no elements
+min()	Minimum value
+max()	Maximum value
+
+
+Common Examples
+filter()
+List<String> names = Arrays.asList("Ram","John","Alex");
+
+names.stream()
+     .filter(name -> name.startsWith("J"))
+     .forEach(System.out::println);
+
+Output
+
+John
+map()
+List<String> names = Arrays.asList("java","python");
+
+names.stream()
+     .map(String::toUpperCase)
+     .forEach(System.out::println);
+
+Output
+
+JAVA
+PYTHON
+sorted()
+List<Integer> list = Arrays.asList(4,1,3,2);
+
+list.stream()
+    .sorted()
+    .forEach(System.out::println);
+
+Output
+
+1
+2
+3
+4
+distinct()
+List<Integer> list = Arrays.asList(1,2,2,3,3,4);
+
+list.stream()
+    .distinct()
+    .forEach(System.out::println);
+
+Output
+
+1
+2
+3
+4
+count()
+long c = list.stream().count();
+System.out.println(c);
+collect()
+List<Integer> result = list.stream()
+                           .filter(n -> n > 2)
+                           .collect(Collectors.toList());
+
+System.out.println(result);
+reduce()
+int sum = Arrays.asList(1,2,3,4)
+                .stream()
+                .reduce(0, Integer::sum);
+
+System.out.println(sum);
+
+Output
+
+10
+Stream Pipeline
+Collection
+    ↓
+stream()
+    ↓
+filter()
+    ↓
+map()
+    ↓
+sorted()
+    ↓
+collect()
+Advantages
+✅ Less code
+✅ No manual loops
+✅ Easy filtering and sorting
+✅ Supports parallel processing (parallelStream())
+✅ More readable and maintainable code
+Interview Questions
+
+Q1. What is a Stream?
+A sequence of elements used to process collection data without modifying the original collection.
+
+Q2. What are the two types of stream operations?
+
+Intermediate Operations
+Terminal Operations
+
+Q3. Which operation removes duplicates?
+distinct()
+
+Q4. Which operation converts data?
+map()
+
+Q5. Which operation filters data?
+filter()
+
+Q6. Which operation sorts data?
+sorted()
+
+Q7. Which operation collects data into a List?
+collect(Collectors.toList())
+
+Q8. Can a stream be reused after a terminal operation?
+No. Once a terminal operation executes, the stream is consumed and cannot be reused

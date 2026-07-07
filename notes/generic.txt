@@ -1,0 +1,152 @@
+1. Generics
+Definition
+
+Generics allow classes, interfaces, and methods to work with different data types while providing type safety.
+
+Syntax
+ClassName<Type> obj = new ClassName<>();
+
+
+Example
+ArrayList<String> list = new ArrayList<>();
+list.add("Java");
+Generic Class
+class Box<T> {
+    T value;
+}
+Generic Method
+public static <T> void print(T value) {
+    System.out.println(value);
+}
+
+
+Generic Type Parameters
+<T> → Type
+<E> → Element
+<K> → Key
+<V> → Value
+<N> → Number
+
+Advantages
+Type safety
+Reusable code
+No type casting
+Compile-time error checking
+
+
+2. Functional Interface
+Definition
+
+A Functional Interface is an interface that contains only one abstract method.
+
+Syntax
+@FunctionalInterface
+interface Demo {
+    void show();
+}
+
+Rules
+Only one abstract method
+Can have multiple default methods
+Can have multiple static methods
+Can have methods from Object class
+Used with Lambda Expressions
+
+Advantages
+Less code
+Easy to implement
+Supports functional programming
+
+
+3. Types of Functional Interfaces
+
+1. Predicate<T>
+Method: test()
+Return: boolean
+Purpose: Check a condition
+Predicate<Integer> p = x -> x > 10;
+
+2. Consumer<T>
+Method: accept()
+Return: void
+Purpose: Consumes data
+Consumer<String> c = s -> System.out.println(s);
+
+3. Supplier<T>
+Method: get()
+Return: Value
+Purpose: Supplies data
+Supplier<String> s = () -> "Hello";
+
+4. Function<T,R>
+Method: apply()
+Return: Result
+Purpose: Converts one type to another
+Function<Integer,Integer> f = n -> n * n;
+
+
+4. Lambda Expression
+Definition
+
+A Lambda Expression is a short way to implement the single abstract method of a functional interface.
+
+Syntax
+(parameters) -> expression
+
+or
+
+(parameters) -> {
+    statements;
+}
+
+Example
+@FunctionalInterface
+interface Add {
+    int add(int a, int b);
+}
+
+Add obj = (a, b) -> a + b;
+System.out.println(obj.add(10, 20));
+
+Advantages
+Reduces code
+No anonymous class needed
+Improves readability
+Easy event handling
+Works with Collections and Streams
+
+
+5. Functional Interface vs Lambda
+Functional Interface	Lambda Expression
+Interface with one abstract method	Implements the functional interface
+Declared using interface	Written using ->
+Can exist independently	Cannot exist without a functional interface
+
+
+6. Interview / Exam Points (2 Marks)
+Generics
+Used for type safety.
+Eliminates explicit type casting.
+Makes code reusable.
+Functional Interface
+Contains only one abstract method.
+@FunctionalInterface annotation is optional but recommended.
+Lambda Expression
+Uses the -> operator.
+Provides a concise implementation of a functional interface.
+Built-in Functional Interfaces
+Interface	Method	Use
+Predicate<T>	test()	Check condition
+Consumer<T>	accept()	Consume data
+Supplier<T>	get()	Supply data
+Function<T,R>	apply()	Transform data
+
+Memory Tip:
+
+Generics → <T> (Type Safety)
+Functional Interface → One Abstract Method
+Lambda → -> Operator
+Predicate → Test
+Consumer → Accept
+Supplier → Get
+Function → Apply

@@ -1,0 +1,144 @@
+Time Complexity tells us how the running time of an algorithm increases as the input size (N) increases.
+
+Common Time Complexities
+Time Complexity	Name	Example
+O(1)	Constant	Access arr[0]
+O(log n)	Logarithmic	Binary Search
+O(n)	Linear	Traverse an array
+O(n log n)	Linearithmic	Merge Sort, Heap Sort
+O(n²)	Quadratic	Nested loops, Bubble Sort
+O(n³)	Cubic	Three nested loops
+O(2ⁿ)	Exponential	Recursive Fibonacci
+O(n!)	Factorial	Generating all permutations
+
+
+Examples
+
+O(1)
+System.out.println(arr[0]);
+O(n)
+for (int i = 0; i < n; i++) {
+    System.out.println(arr[i]);
+}
+
+
+O(n²)
+for (int i = 0; i < n; i++) {
+    for (int j = 0; j < n; j++) {
+        System.out.println(i + " " + j);
+    }
+}
+
+
+O(log n)
+// Binary Search
+while (low <= high) {
+    int mid = (low + high) / 2;
+    // search logic
+}
+
+
+Time Complexity of Common Algorithms
+Algorithm	Time Complexity
+
+
+Linear Search	O(n)
+Binary Search	O(log n)
+Bubble Sort	O(n²)
+Selection Sort	O(n²)
+Insertion Sort	O(n²)
+Merge Sort	O(n log n)
+Quick Sort	O(n log n) (average), O(n²) (worst)
+Heap Sort	O(n log n)
+DFS	O(V + E)
+BFS	O(V + E)
+
+
+Exam Tip
+Single loop → O(n)
+Two nested loops → O(n²)
+Three nested loops → O(n³)
+Loop dividing by 2 each time → O(log n)
+Loop + Binary Search → O(n log n)
+All permutations of n elements → O(n!)
+
+Memory Trick:
+
+O(1) < O(log n) < O(n) < O(n log n) < O(n²) < O(n³) < O(2ⁿ) < O(n!)
+
+(from fastest to slowest).
+
+
+
+
+
+
+
+Space complexity
+Space Complexity (DSA)
+
+Space Complexity is the amount of memory (RAM) an algorithm uses as the input size (n) increases.
+
+Formula
+
+Space Complexity = Fixed Space + Auxiliary Space
+
+Fixed Space → Variables, constants.
+Auxiliary Space → Extra memory used during execution (arrays, recursion stack, etc.).
+
+
+Common Space Complexities
+Space Complexity	Meaning	Example
+
+
+O(1)	Constant	Using a few variables
+O(n)	Linear	Extra array of size n
+O(n²)	Quadratic	2D array
+O(log n)	Logarithmic	Binary search recursion
+
+
+Examples
+1. O(1) – Constant Space
+int a = 10;
+int b = 20;
+int sum = a + b;
+System.out.println(sum);
+
+Space Complexity: O(1)
+
+2. O(n) – Linear Space
+int[] arr = new int[n];
+
+Space Complexity: O(n)
+
+3. O(n²) – Quadratic Space
+int[][] matrix = new int[n][n];
+
+Space Complexity: O(n²)
+
+4. O(log n) – Recursive Binary Search
+binarySearch(arr, low, high);
+
+Recursion stack uses O(log n) space.
+
+Time vs Space
+Algorithm	Time	Space
+Linear Search	O(n)	O(1)
+Binary Search	O(log n)	O(1) (iterative)
+Bubble Sort	O(n²)	O(1)
+Selection Sort	O(n²)	O(1)
+Insertion Sort	O(n²)	O(1)
+Merge Sort	O(n log n)	O(n)
+Quick Sort	O(n log n) avg	O(log n)
+BFS	O(V + E)	O(V)
+DFS (recursive)	O(V + E)	O(V)
+Exam Tips
+Only variables → O(1)
+Extra array → O(n)
+2D array → O(n²)
+Recursive binary search → O(log n)
+Merge sort → O(n) (extra array)
+Bubble/Selection/Insertion sort → O(1) (in-place)
+Memory Trick
+Time Complexity → How much time the program takes.
+Space Complexity → How much memory the program uses.
